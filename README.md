@@ -1,7 +1,7 @@
 
 
 To install dependencies:
-$ python3 -m pip install requirements.txt
+$ python3 -m pip install -r requirements.txt
 
 To run a development server, rune the following from the project main directory
 $ python3 run.py
