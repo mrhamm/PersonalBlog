@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<div style="padding-right: 40px;" class="d-flex text-black-50">
+    <div class="col-md-0" style="padding-right: 40px;" >
+    <div class = "align-items-center">
+        <img class="mr-3" src="{{url_for('static',filename='/images/LargeLogo.png')}}" alt="Large Personal Logo Here" width="200" height="200">
+        <hr>
+        <div class="lh-100" style = "width:225px;">
+            <br><b>
+              Welcoming text here 
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus rem odio non maiores sequi, autem fuga blanditiis asperiores iure vitae ullam aperiam esse consequatur velit vel ipsa, quia quo suscipit.
+             </b>
+        </div>
+       
+    </div>
+    <hr>
+    <div class ="smallforms" style="padding-left: 10px;">
+      
+      <form action="{{ url_for('search') }}" id="search" method="GET">
+        <label>Search the site</label>
+        <input type="text" id="query" name="query">
+      <br>
+      <br>
+      <button type="submit">Search</button>
+      </form>
+      <hr>
+            
+      <b><u>Contact Me</u></b>
+      <form action="email" id="email" method="GET">
+        <label>Your Email</label>
+        <br>
+        <input type="email" id="from" name="from">
+        <br>
+        <label>Subject</label>
+        <br>
+        <input type="text" id="subject" name="subject">
+        <br>
+        <label>Your Message</label>
+        <br>
+        <textarea id="message" name="message" rows="10" cols = "23" >
+          </textarea>
+      <br>
+      <button type="submit">Send</button>
+      </form>
+      </div>
+</div>
+<div class = "col-md-9" >
+<b>Most recent posts by category</b>
+{% for post in posts %}
+
+<article class="media content-section">
+    <img class ="rounded-circle article-img" src="{{url_for('static',filename='/images/' + post.thumbnail)}}">
+    <div class="media-body">
+      <div class="article-metadata">
+        <small class="text-muted"><br>Category:{{post.category}}</small>
+      </div>
+      <h2><a class="article-title" href="{{url_for('post',post_id=post.id,category=post.category) }}">{{post.title}}</a></h2>
+      <p class="article-content">{{post.description |safe}}...<a href="{{url_for('post',post_id=post.id,category=post.category) }}"><small>read more</small></a>
+    </p>
+    </div>
+</article>
+{% endfor %}
+
+</div>
+</div>
+
+{% endblock content %}
+

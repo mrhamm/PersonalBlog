@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+{% block content %}
+
+
+<div style="padding-right: 25px;" class="d-flex text-black-50">
+  <div class="col-md-0" style="padding-right: 40px;">
+  <div class = "align-items-center">
+      <img class="mr-3" src="{{url_for('static',filename='images/Topic3.png')}}" alt="Topic 3 Image Placeholder" width="200" height="200">
+     <hr> 
+      <div class="lh-100" style="width: 250px">
+         Intoduce topic here <br>
+         >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, officiis placeat illo voluptatum rem qui iusto! Ratione, accusantium placeat ullam, officiis cupiditate eius magnam dolores, nulla soluta repudiandae corporis. Suscipit!
+      </div>
+  </div>
+  <hr>
+<div class ="smallforms" style="padding-left: 10px;">
+      
+      <form action="{{url_for('search')}}" id="search" method="GET">
+        <label>Search the site</label>
+        <input type="text" id="query" name="query">
+      <br>
+      <br>
+      <button type="submit">Search</button>
+      </form>
+      <hr>
+            
+      <b><u>Contact Me</u></b>
+      <form action="email" id="email" method="GET">
+        <label>Your Email</label>
+        <br>
+        <input type="email" id="from" name="from">
+        <br>
+        <label>Subject</label>
+        <br>
+        <input type="text" id="subject" name="subject">
+        <br>
+        <label>Your Message</label>
+        <br>
+        <textarea rows="10" cols = "23" id="message" name="message">
+          </textarea>
+      <br>
+      <button type="submit">Send</button>
+      </form>
+      </div>
+
+</div>
+
+<div class = "col-md-9">
+{% for post in posts.items %}
+
+<article class="media content-section">
+    <img class ="rounded-circle article-img" src="{{url_for('static',filename='/images/' + post.thumbnail)}}" alt="Post Thumbnail">
+    <div class="media-body">
+      <div class="article-metadata">
+      </div>
+      <h2><a class="article-title" href="{{url_for('post',post_id=post.id,category=post.category) }}">{{post.title}}</a></h2>
+      <p class="article-content">{{post.description |safe}}...<a href="{{url_for('post',post_id=post.id,category=post.category) }}"><small>read more</small></a>
+    </p>
+    </div>
+</article>
+{% endfor %}
+
+{% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1,right_current=2) %}
+  {% if page_num %}
+    {% if posts.page == page_num %}
+      <a class="btn btn-info mb-4" href="{{ url_for('topic3',page=page_num) }}"> {{page_num}} </a>
+    {% else %}
+      <a class="btn btn-outline-info mb-4" href="{{ url_for('topic3',page=page_num) }}"> {{page_num}} </a>
+    {% endif %}
+  {% else %}
+   ...
+  {% endif %}
+{% endfor %}
+</div>
+</div>
+{% endblock %}

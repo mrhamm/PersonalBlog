@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div style="padding-right: 25px;" class="d-flex text-black-50">
+  <div class="col-md-0">
+  <div class = "align-items-center">
+      <img class="mr-3" src="{{url_for('static',filename='images/'+post.thumbnail)}}" alt="" width="200" height="200">
+      
+      <div style = "width:225px;" class="lh-100">
+          <h6 class="mb-0 lh-100">{{ post.description }}</h6>
+      </div>
+  </div>
+
+
+</div>
+
+<div class = "col-md-9">
+  <h1><b>{{post.title}}</b></h1>
+<br>
+  <article class = "media content-section">
+    <div class="media-body">
+      <h2 class="article-title"></h2>
+      <p class="article-content">{{ post.content | safe}} </p>
+    </div>
+  </article>
+</div>
+</div>
+{% endblock content %}

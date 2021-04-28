@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div style="padding-right: 25px;" class="d-flex text-black-50">
+        <div class="col-md-0" style ="padding-right:40px;" >
+        <div class = "align-items-center">
+            <img class="mr-3" src="{{url_for('static',filename='images/PersonalPhoto.jpg')}}" alt="Personal Photograph" width="200" height="200">
+            
+            <div class="lh-100">
+                <h6 class="mb-0 lh-100">Name</h6>
+                <small>Title</small>
+            </div>
+        </div>
+    
+    <a href="" ><img src="{{url_for('static',filename='/images/GitHub-Mark.png')}}" alt="" width="20" height="20"><small>My Github</small></a>
+    <br>
+    <a href="" ><img src="{{url_for('static',filename='/images/arxivicon.jpg')}}" alt="" width="20" height="20"><small>Arxiv Publications</small></a>
+    <br>
+    <a href="{{ url_for('static',filename='resume.pdf') }}" download ><img src="{{url_for('static',filename='/images/pdficon.png') }}" width="20" height="20"><small>My Resume</small></a>
+    <hr>
+    <div style="width: 250px;">
+    <h3><u>About Me</u></h3>
+        Introduce yourself<br>
+         >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi vitae, autem maiores quae qui doloribus aliquid temporibus similique officiis commodi laudantium sint consectetur rem inventore, at corrupti reprehenderit tempora! Ab!
+
+    </div>
+    
+    <div class ="smallforms" >
+      
+        <form action="{{url_for('search')}}" id="search" method="GET">
+          <label>Search the site</label>
+          <input type="text" id="query" name="query">
+        <br>
+        <br>
+        <button type="submit">Search</button>
+        </form>
+        <hr>
+        <b><u>Contact Me</u></b>
+        <form action="email" id="email" method="GET">
+          <label>Your Email</label>
+          <br>
+          <input type="email" id="from" name="from">
+          <br>
+          <label>Subject</label>
+          <br>
+          <input type="text" id="subject" name="subject">
+          <br>
+          <label>Your Message</label>
+          <br>
+          <textarea rows="10" cols = "23" id="message" name="message">
+            </textarea>
+        <br>
+        <button type="submit">Send</button>
+        </form>
+        </div>
+    </div>
+    
+        <div class = "col-md-9">
+            <article class ="media content-section">
+                <div class="media-body">
+                   
+                    <div class="row">
+                        <div class="col">
+                    <h3><u>Education</u></h3>
+                    <h4>Degree 1</h4>
+                    <small><b>University - Sept. 2021</b><br>
+                        Details about degree here
+                        </small>
+                    <h4>Degree 2</h4>
+                    <small><b>University- May 2016</b><br>
+                        Details about degree here </small>
+
+                    </div>
+                    <div class="col">
+                        <h3><u>Computing and Skills</u></h3>
+                        <small><b>Languages:</b>Details <br>
+                        <b>Tools:</b> Details<br>
+                        <b>Specialty 1:</b> Details<br>
+                        <b>Other Skills:</b>Details <br>
+                        <b>Mathematics:</b> Details<br>
+                        
+                </div>
+                </div>
+                    <hr>
+                 
+                    <h3><u>Projects and Development</u></h3>
+                    <h4>Project 1</h4>
+                    <small><b>Timeline</b><br> </small>
+                    
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae animi molestias ab doloribus reprehenderit, beatae recusandae voluptatibus nihil ex, rem quam corporis maiores eum? Tempore qui ducimus vero dolorem at.
+                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni doloremque deserunt eius corrupti ducimus, excepturi nisi veritatis animi vero modi et voluptatibus molestiae? Sint, dolorem doloribus qui sequi dolore autem.
+                    >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur iure sequi, esse ex assumenda facilis. Laudantium tempora velit ut sed voluptates incidunt, eligendi accusamus exercitationem impedit qui vitae laborum similique!
+
+                    
+                    <h4>Project 2</h4>
+                    <small><b>Timeline</b><br></small>
+                    >Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae animi molestias ab doloribus reprehenderit, beatae recusandae voluptatibus nihil ex, rem quam corporis maiores eum? Tempore qui ducimus vero dolorem at.
+                    >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni doloremque deserunt eius corrupti ducimus, excepturi nisi veritatis animi vero modi et voluptatibus molestiae? Sint, dolorem doloribus qui sequi dolore autem.
+                    >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur iure sequi, esse ex assumenda facilis. Laudantium tempora velit ut sed voluptates incidunt, eligendi accusamus exercitationem impedit qui vitae laborum similique!
+
+                    
+                    
+                    <hr>
+                    <h3><u>Other </u></h3>
+                    Item<br>
+                    Item
+                    </small>
+
+                    <hr>
+                    <h3><u>Work Experience</u></h3>
+                    <h4>Position 1</h4>
+                   <small><b>Company 2016-Current</b></small> 
+                    <ul>
+
+                        <li>
+                           Detail
+                        </li>
+                        <li>
+                            Detail
+                        </li>
+                        <li>
+                            Detail
+                        </li>
+                        <li>
+                            Detail  
+                        </li>
+                    
+                    </ul>
+                    <h4>Position 2</h4>
+                   <small><b>Company 2016-Current</b></small> 
+                    <ul>
+
+                        <li>
+                           Detail
+                        </li>
+                        <li>
+                            Detail
+                        </li>
+                        <li>
+                            Detail
+                        </li>
+                        <li>
+                            Detail  
+                        </li>
+                    
+                    </ul>       
+                    
+                    <small>
+
+                    </small>
+                    
+
+                </div>
+            </article>
+        </div>
+        
+    </div>
+{% endblock content%}
