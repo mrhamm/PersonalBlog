@@ -1,7 +1,7 @@
 FROM python:3.8-slim-buster
 
 
-WORKDIR /home/mrhamm
+WORKDIR /home/usr
 
 COPY requirements.txt requirements.txt
 
